@@ -1,0 +1,24 @@
+name: daily_sentences
+description: Daily Sentences Flutter Web application.
+publish_to: none
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  crypto: ^3.0.6
+  http: ^1.3.0
+  provider: 6.1.5+1
+  web: ^1.1.1
+
+dev_dependencies:
+  flutter_lints: 5.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
