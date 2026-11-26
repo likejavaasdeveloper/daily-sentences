@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate Python and Flutter
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: tools/content_builder/uv.lock
+
+      - name: Install Python dependencies from lockfile
+        working-directory: tools/content_builder
+        run: uv sync --frozen --group dev
+
+      - name: Check Python formatting
+        working-directory: tools/content_builder
+        run: uv run --frozen ruff format --check .
+
+      - name: Check Python static analysis
+        working-directory: tools/content_builder
+        run: uv run --frozen ruff check .
+
+      - name: Run Python tests
+        working-directory: tools/content_builder
+        run: uv run --frozen pytest
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.32.8"
+          channel: stable
+          cache: true
+
+      - name: Install Flutter dependencies from lockfile
+        run: flutter pub get --enforce-lockfile
+
+      - name: Check Dart formatting
+        run: dart format --output=none --set-exit-if-changed lib test
+
+      - name: Check Flutter static analysis
+        run: flutter analyze
+
+      - name: Run Flutter tests
+        run: flutter test
+
+      - name: Build and verify repository-base Web artifact
+        run: tools/build_web.sh /daily-sentences/
