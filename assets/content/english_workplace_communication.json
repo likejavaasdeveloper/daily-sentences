@@ -1,0 +1,46 @@
+{
+  "sentences": [
+    {
+      "language": "en",
+      "category": "communication",
+      "sentence": "Thanks for explaining!",
+      "translation": "ممنون که توضیح دادید!",
+      "usage": "برای تشکر از کسی پس از اینکه موضوعی را توضیح داده است."
+    },
+    {
+      "language": "en",
+      "category": "communication",
+      "sentence": "Thanks for the clarification!",
+      "translation": "ممنون که موضوع را روشن کردید!",
+      "usage": "برای تشکر از کسی که ابهام یا سوءتفاهمی را برطرف کرده است."
+    },
+    {
+      "language": "en",
+      "category": "status-update",
+      "sentence": "The system is working now, so the issue seems to be resolved.",
+      "translation": "سیستم اکنون کار می‌کند، بنابراین به نظر می‌رسد مشکل برطرف شده است.",
+      "usage": "برای اعلام اینکه یک مشکل فنی ظاهراً برطرف شده است."
+    },
+    {
+      "language": "en",
+      "category": "confidence",
+      "sentence": "I am optimistic that this solution will work.",
+      "translation": "خوش‌بین هستم که این راه‌حل کارساز خواهد بود.",
+      "usage": "برای بیان امیدواری و اطمینان محتاطانه درباره نتیجه یک راه‌حل."
+    },
+    {
+      "language": "en",
+      "category": "impact",
+      "sentence": "The software will have a positive impact on this.",
+      "translation": "این نرم‌افزار تأثیر مثبتی بر این موضوع خواهد داشت.",
+      "usage": "برای بیان اینکه یک نرم‌افزار به بهبود یک موضوع یا فرایند کمک می‌کند."
+    },
+    {
+      "language": "en",
+      "category": "troubleshooting",
+      "sentence": "I tried it, but the issue still persists.",
+      "translation": "آن را امتحان کردم، اما مشکل همچنان پابرجاست.",
+      "usage": "برای گزارش اینکه یک اقدام انجام شده اما مشکل هنوز برطرف نشده است."
+    }
+  ]
+}
