@@ -54,7 +54,7 @@ jobs:
           cache: true
 
       - name: Install Flutter dependencies from lockfile
-        run: flutter pub get --enforced-lockfile
+        run: flutter pub get --enforce-lockfile
 
       - name: Run Dart and Flutter quality checks
         run: |

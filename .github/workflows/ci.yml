@@ -53,7 +53,7 @@ jobs:
           cache: true
 
       - name: Install Flutter dependencies from lockfile
-        run: flutter pub get --enforced-lockfile
+        run: flutter pub get --enforce-lockfile
 
       - name: Check Dart formatting
         run: dart format --output=none --set-exit-if-changed lib test
